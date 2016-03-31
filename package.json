@@ -1,0 +1,22 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pushnoy100500/personalWebsite.git"
+  },
+  "author": "Igor Romanenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pushnoy100500/personalWebsite/issues"
+  },
+  "homepage": "https://github.com/pushnoy100500/personalWebsite#readme",
+  "devDependencies": {
+    "express": "^4.13.4"
+  }
+}
