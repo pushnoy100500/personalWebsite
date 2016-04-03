@@ -1,0 +1,93 @@
+@keyframes dropHeader {
+  0% {
+    transform: translateY(-70px); }
+  100% {
+    transform: translateY(0); } }
+
+@keyframes appear {
+  0% {
+    opacity: 0.2; }
+  100% {
+    opacity: 1; } }
+
+body {
+  margin: 0;
+  padding: 0;
+  animation-name: appear;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s; }
+  body .container {
+    position: relative; }
+  body .spacer {
+    width: 0;
+    height: 600px;
+    float: left;
+    clear: both; }
+  body .one {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    float: left;
+    background-color: #1b2a49;
+    background-image: url("../imgs/me.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    box-shadow: inset 0px -10px 25px 6px rgba(0, 0, 0, 0.3); }
+    body .one nav {
+      background: #e84c3d;
+      animation-name: dropHeader;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in;
+      animation-duration: 0.5s; }
+    body .one .hello {
+      padding-top: 150px;
+      color: #fff;
+      text-align: left; }
+      body .one .hello h2 {
+        font-size: 2.5em; }
+      body .one .hello p {
+        font-weight: lighter;
+        font-size: 1.5em; }
+  body .two {
+    background: #e84c3d;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    float: left;
+    text-align: center;
+    color: #fff;
+    padding-top: 50px; }
+    body .two p {
+      font-weight: lighter;
+      line-height: 40px;
+      font-size: 1.4em; }
+    body .two .social a {
+      margin: 10px; }
+      body .two .social a img:hover {
+        width: 60px; }
+  body .three {
+    background: #497954;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    float: left;
+    padding-top: 60px; }
+    body .three h4 {
+      color: #fff;
+      text-align: left; }
+    body .three .collection {
+      margin-top: 50px; }
+      body .three .collection p {
+        text-align: center; }
+  body .latched {
+    position: fixed;
+    top: 0;
+    left: 8px;
+    right: 8px;
+    /*width: 100%; */
+    margin-left: -8px;
+    margin-right: 0; }
+
+/*# sourceMappingURL=application.css.map */

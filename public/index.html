@@ -2,10 +2,23 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Sophisticated Nerd</title>
+	<!-- pretty stuff -->
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/application.css">
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+
+	<!-- angular stuff -->
 	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="js/ngApp.js"></script>
+	<!-- directives -->
+	<script src="js/directives/landingDir.js"></script>
 </head>
-<body>
-	
+<body ng-app="PersonalSiteApp">
+	<ui-view></ui-view>
 </body>
 </html>
