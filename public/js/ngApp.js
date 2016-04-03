@@ -8,4 +8,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
 			url: "/",
 			template: "<landing-dir></landing-dir>"
 		})
+		.state('blog', {
+			url: "/blog",
+			template: "<blog-dir></blog-dir>"
+		})
 })

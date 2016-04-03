@@ -33,6 +33,5 @@
     });
 
 })(window.jQuery);
-// initialize mobile navigation
- $(".button-collapse").sideNav();
+
         

@@ -37,6 +37,7 @@ body {
     box-shadow: inset 0px -10px 25px 6px rgba(0, 0, 0, 0.3); }
     body .one nav {
       background: #e84c3d;
+      /*$red-color;*/
       animation-name: dropHeader;
       animation-iteration-count: 1;
       animation-timing-function: ease-in;
