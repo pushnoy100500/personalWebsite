@@ -16,7 +16,17 @@ body {
   animation-name: appear;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
-  animation-duration: 1s; }
+  animation-duration: 1s;
+  /* blog styles */
+  /* blog details styles */
+  /* projects page styles */ }
+  body nav {
+    background: #e84c3d;
+    /*$red-color;*/
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s; }
   body .container {
     position: relative; }
   body .spacer {
@@ -35,13 +45,6 @@ body {
     background-position: right;
     background-size: contain;
     box-shadow: inset 0px -10px 25px 6px rgba(0, 0, 0, 0.3); }
-    body .one nav {
-      background: #e84c3d;
-      /*$red-color;*/
-      animation-name: dropHeader;
-      animation-iteration-count: 1;
-      animation-timing-function: ease-in;
-      animation-duration: 0.5s; }
     body .one .hello {
       padding-top: 150px;
       color: #fff;
@@ -51,6 +54,33 @@ body {
       body .one .hello p {
         font-weight: lighter;
         font-size: 1.5em; }
+      body .one .hello .btn {
+        background-color: #e84c3d; }
+    body .one .contact-me {
+      font-size: 0.5em;
+      margin-top: -50px; }
+      body .one .contact-me .come-back {
+        cursor: pointer; }
+      body .one .contact-me .input-field input[type=text]:focus + label {
+        color: #e84c3d; }
+      body .one .contact-me .input-field input[type=text]:focus {
+        border-bottom: 1px solid #e84c3d;
+        box-shadow: 0 1px 0 0 #e84c3d; }
+      body .one .contact-me .input-field input[type=email]:focus + label {
+        color: #e84c3d; }
+      body .one .contact-me .input-field input[type=email]:focus {
+        border-bottom: 1px solid #e84c3d;
+        box-shadow: 0 1px 0 0 #e84c3d; }
+      body .one .contact-me .input-field .materialize-textarea:focus {
+        border-bottom: 1px solid #e84c3d;
+        box-shadow: 0 1px 0 0 #e84c3d; }
+      body .one .contact-me .input-field .materialize-textarea:focus + label {
+        color: #e84c3d; }
+      body .one .contact-me .input-field .prefix.active {
+        color: #e84c3d; }
+      body .one .contact-me .btn {
+        float: right;
+        background-color: #e84c3d; }
   body .two {
     background: #e84c3d;
     width: 100%;
@@ -90,5 +120,69 @@ body {
     /*width: 100%; */
     margin-left: -8px;
     margin-right: 0; }
+  body .blog .blog-left {
+    background-color: #90a4ae;
+    color: #fff;
+    position: fixed;
+    height: 100%;
+    text-align: right;
+    padding-right: 30px;
+    padding-top: 15%; }
+    body .blog .blog-left h4 {
+      display: inline-block;
+      border: 1px solid #fff;
+      padding: 5px 20px; }
+    body .blog .blog-left p {
+      font-size: 1.3em;
+      font-weight: lighter;
+      font-style: italic; }
+      body .blog .blog-left p span {
+        font-style: normal; }
+  @media screen and (max-width: 600px) {
+    body .blog .blog-left {
+      position: relative;
+      padding-top: 8%;
+      z-index: 100; }
+    body .blog .blog-right {
+      position: relative;
+      z-index: 10;
+      margin-top: 60%; } }
+  body .blog .blog-right {
+    padding-left: 30px;
+    position: fixed;
+    height: 85%;
+    overflow: scroll; }
+    body .blog .blog-right .post-title {
+      font-weight: bold; }
+    body .blog .blog-right .post-author span {
+      color: #90a4ae; }
+    body .blog .blog-right .post-message {
+      font-weight: lighter; }
+  body .post-details .author {
+    color: #90a4ae; }
+  body .post-details .tag {
+    background-color: #26a69a;
+    margin: 5px;
+    padding: 7px 10px;
+    color: #fff;
+    font-weight: lighter;
+    border-radius: 5px; }
+  body .post-details .message {
+    font-weight: lighter;
+    font-size: 1.2em; }
+  body .projects {
+    background-color: #1b2a49;
+    color: #fff;
+    height: 100%; }
+    body .projects h4 {
+      padding-bottom: 20px; }
+    body .projects .container {
+      padding-top: 50px; }
+      body .projects .container .work img {
+        width: 60%;
+        height: auto; }
+      body .projects .container .work p {
+        font-weight: lighter;
+        font-size: 1.2em; }
 
 /*# sourceMappingURL=application.css.map */

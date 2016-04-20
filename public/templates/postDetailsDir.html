@@ -1,0 +1,20 @@
+<nav-dir></nav-dir>
+<!-- postDetailsCtrl -->
+<div class="post-details">
+	<div class="container">
+		
+		<h3>
+			{{postDetailsCtrl.post.title}}
+		</h3>
+		<p>
+			By <span class="author">{{ postDetailsCtrl.post.author }}</span>, on {{ postDetailsCtrl.post.date.substring(0, 10)}} 
+		</p>
+		<p>
+			<span class="tag" ng-repeat="tag in postDetailsCtrl.post.tags.split(',')">#{{tag}}</span>
+		</p>
+		<div class="divider"></div>
+		<p class="message">
+			{{postDetailsCtrl.post.message}}
+		</p>
+	</div>
+</div>

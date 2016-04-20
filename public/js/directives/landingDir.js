@@ -5,7 +5,8 @@ app.directive('landingDir', function() {
 		restrict: "E",
 		templateUrl: "templates/landingDir.html",
 		controller: function() {
-
-		}
+			this.contacting = false;
+		},
+		controllerAs: "landingCtrl"
 	}
 })

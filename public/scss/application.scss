@@ -1,6 +1,8 @@
 $red-color: #e84c3d;
 $blue-color: #1b2a49;
 $green-color: #497954;
+$gray-color: #90a4ae;
+$green-button-color: #26a69a;
 @keyframes dropHeader {
     0% {
         transform: translateY(-70px);
@@ -18,6 +20,13 @@ $green-color: #497954;
 	}
 }
 body {
+	nav {
+		background: $red-color;/*$red-color;*/
+		animation-name: dropHeader;
+	    animation-iteration-count: 1;
+	    animation-timing-function: ease-in;
+	    animation-duration: 0.5s;
+	}
 	margin: 0;
 	padding: 0;
 	animation-name: appear;
@@ -45,13 +54,7 @@ body {
 		background-size: contain;
 		box-shadow: inset 0px -10px 25px 6px rgba(0,0,0,0.3);
 
-		nav {
-			background: $red-color;/*$red-color;*/
-			animation-name: dropHeader;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 0.5s;
-		}
+	
 		.hello {
 			padding-top: 150px;
 			color: #fff;
@@ -63,7 +66,46 @@ body {
 				font-weight: lighter;
 				font-size: 1.5em;
 			}
+			.btn {
+				background-color: $red-color;
+			}
 		}
+		.contact-me {
+			font-size: 0.5em;
+			margin-top: -50px;
+			.come-back {
+				cursor: pointer;
+			}
+			.input-field input[type=text]:focus + label {
+	    		 color: $red-color;
+	  		 }
+	  		 .input-field input[type=text]:focus {
+			     border-bottom: 1px solid $red-color;
+			     box-shadow: 0 1px 0 0 $red-color;
+	   		}
+	   		.input-field input[type=email]:focus + label {
+	    		 color: $red-color;
+	  		 }
+	  		 .input-field input[type=email]:focus {
+			     border-bottom: 1px solid $red-color;
+			     box-shadow: 0 1px 0 0 $red-color;
+	   		}
+	   		.input-field .materialize-textarea:focus {
+	   			border-bottom: 1px solid $red-color;
+			     box-shadow: 0 1px 0 0 $red-color;
+	   		}
+	   		.input-field .materialize-textarea:focus + label {
+	   			color: $red-color;
+	   		}
+	   		.input-field .prefix.active {
+   				  color: $red-color;
+  			 }
+  			 .btn {
+				float: right;
+				background-color: $red-color;
+  			 }
+		}
+		
 	}
 
 
@@ -121,5 +163,107 @@ body {
 		margin-right: 0;
 	}
 
+	/* blog styles */
+	.blog {
+		.blog-left {
+			background-color: $gray-color;
+			color: #fff;
+			position: fixed;
+			height: 100%;
+			text-align: right;
+			padding-right: 30px;
+			padding-top: 15%;
+			h4 {
+				display: inline-block;
+				border: 1px solid #fff;
+				padding: 5px 20px;
+			}
+			p {
+				font-size: 1.3em;
+				font-weight: lighter;
+				font-style: italic;
+				span {
+					font-style: normal;
+				}
+			}
+		}
+		@media screen and (max-width: 600px) {
+		    .blog-left {
+		    	position: relative;
+		    	padding-top: 8%;
+		    	z-index: 100;
+		    }
+		    .blog-right {
+		    	position: relative;
+		    	z-index: 10;
+				margin-top: 60%;
+			
+		    }
+		}
+
+		.blog-right {
+			padding-left: 30px;
+			position: fixed;
+			height: 85%;
+			overflow: scroll;
+			.post-title {
+				font-weight: bold;
+			}
+			.post-author {
+				span {
+					color: $gray-color;
+				}
+			}
+			.post-message {
+				font-weight: lighter;
+			}
+			.read-more {
+				
+			
+			}
+		}
+		
+	}
+	/* blog details styles */
+	.post-details {
+
+		.author {
+			color: $gray-color;
+		}
+		.tag {
+			background-color: $green-button-color;
+			margin: 5px;
+			padding: 7px 10px;
+			color: #fff;
+			font-weight: lighter;
+			border-radius: 5px;
+		}
+		.message {
+			font-weight: lighter;
+			font-size: 1.2em;
+		}
+	}
+	/* projects page styles */
+	.projects {
+		background-color: $blue-color;
+		color: #fff;
+		height: 100%;
+		h4 {
+			padding-bottom: 20px;
+		}
+		.container {
+			padding-top: 50px;
+			.work {
+				img {
+					width: 60%;
+					height: auto;
+				}
+				p {
+					font-weight: lighter;
+					font-size: 1.2em;
+				}
+			}
+		}
+	}
 
 }

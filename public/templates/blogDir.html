@@ -1,2 +1,26 @@
-<h1>Blog</h1>
-<a ui-sref="landing"><< Home</a>
+<nav-dir></nav-dir>
+
+<div class="blog">
+	 <div class="row">
+
+	      <div class="col m3 s12 blog-left">
+	       <h4>Blog</h4>
+	       <p>
+	       	“ It ain't no fun if the homies can't have none. ” <br>
+	       	<span>- Snoop Dog</span>
+	       </p>
+	       	      
+	      </div>
+
+	      <div class="col m9 s12 offset-m3 blog-right">
+	      	<div class="divider" ng-repeat-start="post in blogStateCtrl.posts"></div>
+	      	<div class="section" ng-repeat-end>
+	      		<h5 class="post-title">{{ post.title }}</h5>
+	      		<p class="post-author">By  <span>{{ post.author }}</span>, since {{ post.date.substring(0, 10)}}</p>
+	      		<p class="post-message">{{post.message | limitTo : 200}}... </p>
+	      		<p class="read-more"><a class="btn waves-effect" ui-sref="blog.details({id: post._id})">Read more <i class="material-icons right">trending_flat</i></a></p>
+	      	</div>
+	      </div>
+
+	 </div>
+ </div>

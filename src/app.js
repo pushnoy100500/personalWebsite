@@ -1,16 +1,23 @@
 'use strict';
-var express = require('express');
+var express = require('express'),
+    path = require('path'),
+    cookieParser = require('cookie-parser'),
+    nodemailer = require('nodemailer'),
+    session = require('express-session'),
+    bodyParser = require('body-parser'),
+    mongo = require('mongodb'),
+    mongoose = require('mongoose'),
+    blog = require('./routes/blog');
 
 var app = express();
 
 app.use(express.static('public'));
 
+//routes
+app.use("/blog", blog);
 
 app.get('/', function(req, res) {
 	res.send('WOHOO!');
-})
-app.get('/api/todos', function(req, res) {
-	res.send('todos');
 })
 
 app.listen("3000", function() {

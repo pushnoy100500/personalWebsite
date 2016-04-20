@@ -5,10 +5,37 @@
   <div class="hello">
   <div class="container">
   	<div class="row">
-  		<div class="col m12 l12">
+  		<div class="col m12 l12" ng-show="!landingCtrl.contacting">
   			<h2>Hi! My name is Igor!</h2>
   			<p>I'm a passionate web developer!</p>
   			<p>Keeping it clean, scalable, and readable.</p>
+  			<button class="btn waves-effect waves-light" ng-click="landingCtrl.contacting = true">
+   				Contact me
+ 			 </button>
+  		</div>
+  		<div class="col m8 s8 l6 contact-me" ng-show="landingCtrl.contacting">
+  	
+    		<span class="come-back" ng-click="landingCtrl.contacting = false">back <i class="material-icons left">call_missed</i></span>	
+  			
+  			<form class="row">
+  				<div class="input-field col s12">
+  					  <input ng-model="landingCtrl.name" id="name" type="text" class="validate">
+         			  <label for="name" data-error="wrong">Your name</label>
+  				</div>
+  				<div class="input-field col s12">
+  					  <input ng-model="landingCtrl.email" id="email" type="email" class="validate">
+         			  <label for="email" data-error="wrong">Email</label>
+  				</div>
+  				<div class="input-field col s12">
+		          <textarea ng-model="landingCtrl.message" id="textarea1" class="materialize-textarea"></textarea>
+		          <label for="textarea1" id="textarea1-label">Your message</label>
+     		   </div>
+     		  <div class="input-field col s12">
+     		  	 <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+   					<i class="material-icons right">send</i>
+ 				 </button>
+     		  </div>
+  			</form>
   		</div>
    	</div>
    </div>
