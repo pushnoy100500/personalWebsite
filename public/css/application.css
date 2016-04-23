@@ -19,7 +19,8 @@ body {
   animation-duration: 1s;
   /* blog styles */
   /* blog details styles */
-  /* projects page styles */ }
+  /* projects page styles */
+  /* admin panel */ }
   body nav {
     background: #e84c3d;
     /*$red-color;*/
@@ -45,6 +46,9 @@ body {
     background-position: right;
     background-size: contain;
     box-shadow: inset 0px -10px 25px 6px rgba(0, 0, 0, 0.3); }
+    @media (max-width: 600px) {
+      body .one {
+        background-image: none; } }
     body .one .hello {
       padding-top: 150px;
       color: #fff;
@@ -184,5 +188,13 @@ body {
       body .projects .container .work p {
         font-weight: lighter;
         font-size: 1.2em; }
+  body .admin h1 {
+    text-align: center; }
+  body .admin .post {
+    margin-top: 40px;
+    border: 1px solid #1b2a49;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer; }
 
 /*# sourceMappingURL=application.css.map */

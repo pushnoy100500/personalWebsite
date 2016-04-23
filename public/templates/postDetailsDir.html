@@ -13,8 +13,8 @@
 			<span class="tag" ng-repeat="tag in postDetailsCtrl.post.tags.split(',')">#{{tag}}</span>
 		</p>
 		<div class="divider"></div>
-		<p class="message">
-			{{postDetailsCtrl.post.message}}
+		<p class="message" ng-bind-html="postDetailsCtrl.post.message">
+			
 		</p>
 	</div>
 </div>

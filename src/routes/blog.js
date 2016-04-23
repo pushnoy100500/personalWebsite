@@ -1,5 +1,5 @@
 'use strict'
-var express = require("express"),
+let express = require("express"),
 	router = express.Router(),
 	BlogPost = require('../models/blogPost.js');
 

@@ -10,10 +10,12 @@
 	<link rel="stylesheet" href="css/application.css">
 	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="js/materialize.min.js"></script>
-
+	
 	<!-- angular stuff -->
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+	<script src="https://code.angularjs.org/1.5.5/angular-sanitize.min.js"></script>
 	<script src="js/ngApp.js"></script>
 	<!-- directives -->
 	<script src="js/directives/landingDir.js"></script>
@@ -21,6 +23,11 @@
 	<script src="js/directives/blogDir.js"></script>
 	<script src="js/directives/postDetailsDir.js"></script>
 	<script src="js/directives/projectsDir.js"></script>
+	<script src="js/directives/adminLoginDir.js"></script>
+	<script src="js/directives/adminDir.js"></script>
+	<!-- Services -->
+	<script src="js/services/authService.js"></script>
+	<script src="js/services/postingService.js"></script>
 </head>
 <body ng-app="PersonalSiteApp">
 	<ui-view></ui-view>

@@ -1,12 +1,7 @@
-var app = angular.module('PersonalSiteApp', ['ui.router']);
+var app = angular.module('PersonalSiteApp', ['ui.router', 'ngStorage', 'ngSanitize']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	$urlRouterProvider.otherwise('/');
-	
-	// $locationProvider.html5Mode({
-	//   enabled: true,
-	//   requireBase: false
-	// });
 	
 	$stateProvider
 		.state('landing', {
@@ -58,6 +53,54 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 			url: "/projects",
 			template: "<projects-dir></projects-dir>"
 		})
+		.state('login', {
+			url: "/login",
+			template: "<admin-login-dir></admin-login-dir>"
+		})
+		.state('admin', {
+			url: "/admin",
+			template: "<admin-dir></admin-dir>",
+			resolve: {
+				posts: function($http, $localStorage) {
+					return $http({
+					  method: 'GET',
+					  url: '/admin/posts',
+					  headers: {
+					  	user: $localStorage.user,
+					  	token: $localStorage.token
+					  }
+					})
+				}
+			},
+			controller: function(posts,$localStorage) {
+				
+				this.posts = posts.data;
+			},
+			controllerAs: "admStateCtrl"
+		})
 			
 })
+
+app.run(
+    function ( $rootScope, $state, $location, $localStorage) {
+				/* authentication middleware */
+				$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options){
+					var authStates = ['admin'];
+					
+					if(authStates.indexOf(toState.name) >= 0) {
+						if(!$localStorage.loggedIn) {
+								alert('you must be authorized to view this page');
+								 window.location.href = "#/login";
+								 $state.go("login");
+
+							} else {
+								$location.path(toState.url);
+							}
+					} else {
+							$location.path(toState.url);
+					}
+					/*   */
+				});
+    }
+);
 

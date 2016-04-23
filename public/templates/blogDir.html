@@ -17,7 +17,7 @@
 	      	<div class="section" ng-repeat-end>
 	      		<h5 class="post-title">{{ post.title }}</h5>
 	      		<p class="post-author">By  <span>{{ post.author }}</span>, since {{ post.date.substring(0, 10)}}</p>
-	      		<p class="post-message">{{post.message | limitTo : 200}}... </p>
+	      		<p class="post-message" ng-bind-html="(post.message | limitTo : 200) + '...'"> </p>
 	      		<p class="read-more"><a class="btn waves-effect" ui-sref="blog.details({id: post._id})">Read more <i class="material-icons right">trending_flat</i></a></p>
 	      	</div>
 	      </div>

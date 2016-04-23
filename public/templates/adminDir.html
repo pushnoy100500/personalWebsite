@@ -1,0 +1,37 @@
+
+<div class="admin">
+<button class="btn" ng-click="adminCtrl.logout()">logout</button>
+<h1>Hi Admin! </h1>
+
+	<div class="container">
+		<div class="new-post">
+			<input type="text" ng-model="adminCtrl.newTitle" placeholder="new title">
+			<input type="text" ng-model="adminCtrl.newAuthor" placeholder="new author">
+			<input type="text" ng-model="adminCtrl.newTags" placeholder="new tags">
+			<textarea ng-model="adminCtrl.newMessage" id="" cols="30" rows="50">New message</textarea>
+			<button class="btn" ng-click="adminCtrl.addPost()">create post</button>
+		</div>
+		<div class="row post" ng-repeat="post in admStateCtrl.posts track by $index">
+			<button class="btn" ng-click="adminCtrl.setEditing($index)">edit</button>
+			<button class="btn" ng-click="adminCtrl.updatePost(post)" ng-show="adminCtrl.editing === $index" ng-click="adminCtrl.updatePost">save</button>
+			<button class="btn" ng-show="adminCtrl.editing === $index" ng-click="adminCtrl.deletePost(post._id)">delete</button>
+			<button class="btn" ng-show="adminCtrl.editing === $index" ng-click="adminCtrl.disableEditing()">cancel</button>
+			<h5 ng-show="!(adminCtrl.editing === $index)">
+				{{post.title}}  {{$index}}
+			</h5>
+			<input ng-show="adminCtrl.editing === $index" type="text" placeholder="title" ng-model="post.title">
+			<p ng-show="!(adminCtrl.editing === $index)">
+				{{post.author}}
+			</p>
+			<input ng-show="adminCtrl.editing === $index" placeholder="author" type="text" ng-model="post.author">
+			<p ng-show="!(adminCtrl.editing === $index)">
+				{{post.tags}}
+			</p>
+			<input ng-show="adminCtrl.editing === $index" type="text" placeholder="tags" ng-model="post.tags">
+			<p ng-show="!(adminCtrl.editing === $index)" ng-bind-html="post.message | limitTo : 200">
+				...
+			</p>
+			<textarea ng-show="adminCtrl.editing === $index" name="" cols="50" rows="60" ng-model="post.message"></textarea>
+		</div>
+	</div>
+</div>

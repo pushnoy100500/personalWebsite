@@ -7,18 +7,16 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongo = require('mongodb'),
     mongoose = require('mongoose'),
-    blog = require('./routes/blog');
+    blog = require('./routes/blog'),
+    admin = require('./routes/admin');
 
 var app = express();
 
 app.use(express.static('public'));
-
+app.use(bodyParser.json());
 //routes
 app.use("/blog", blog);
-
-app.get('/', function(req, res) {
-	res.send('WOHOO!');
-})
+app.use("/admin", admin);
 
 app.listen("3000", function() {
 	console.log('server is running on port 3000');
